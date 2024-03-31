@@ -76,35 +76,35 @@
           <h1 class="title is-1 publication-title">Automating Deformable Gasket Assembly</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://simeonoa.github.io">Simeon Adebola</a><sup>1</sup>,</span>
+              <a href="https://simeonoa.github.io">Simeon Adebola*</a><sup>1</sup>,</span>
             <span class="author-block">
-              Tara Sadjadpour</a><sup>1</sup>,</span>
+              Tara Sadjadpour*</a><sup>1</sup>,</span>
             <span class="author-block">
-               Karim El-Refai</a><sup>1</sup>,
+               Karim El-Refai*</a><sup>1</sup>,
             </span>
             <span class="author-block">
               Will Panitch</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              Zehan Ma</a><sup>1</sup>,
+               Zehan Ma</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              Roy Lin</a><sup>1</sup>,
+               Roy Lin</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              Tianshuang Qiu</a><sup>1</sup>
+               Tianshuang Qiu</a><sup>1</sup>
             </span>
             <span class="author-block">
-              Shreya Ganti</a><sup>1</sup>,
+               Shreya Ganti</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              Charlotte Le</a><sup>1</sup>,
+               Charlotte Le</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              Jaimyn Drake</a><sup>1</sup>,
+               Jaimyn Drake</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="https://goldberg.berkeley.edu">Ken Goldberg</a><sup>1</sup>
+              <a href="https://goldberg.berkeley.edu"> Ken Goldberg</a><sup>1</sup>
             </span>
           </div>
 
@@ -112,6 +112,10 @@
             <span class="author-block"><sup>1</sup>The AUTOLab at UC Berkeley</span>
             <!-- <span class="author-block"><sup>2</sup>Google Research</span> -->
           </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>*</sup>Equal Contribution</span>
+          </div>
+
 
           <div class="column has-text-centered">
             <div class="publication-links">
@@ -172,24 +176,125 @@
   </div>
 </section>
 
-<section class="hero teaser">
+<section class="publication-body">
   <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
-      </h2>
+    <div class="publication-body">
+      <img id="publication" autoplay muted loop playsinline height="100%">
+        <img src="./static/images/actuation.png"
+                type="images/png">
+    </img>
+      <p>
+        For the <span class="dgask">Gasket Assembly</span>, task, we present a learned diffusion policy and three procedural algorithms. 
+        The procedural algorithms consist of gasket/channel detection, template matching and then actuation. The Gasket/Channel Detection box shows
+        gasket segmentation (above) and channel segmentation (below). The Template Matching box shows the three templates for the curved, straight and trapezoid
+        channels. The Straight/Curved Actuation box shows selection and actuation strategies for the straight and curved channels: (a) is Unidirectional insertion,
+        (b) is Binary search insertion, and (c) is Hybrid insertion. The numbers of the points on the channels represent the order and location where robot attempts
+        to place and press the gasket into. The arrows indicate the direction(s) of the slide(s). The half-points and quartile-points in binary insertion are labeled as
+        (2,3) and (4,6,7,5) respectively. In Hybrid insertion they’re labeled (4,5) and (6,8,9,5) respectively. For the trapezoid channel, we treat each segment of the
+        trapezoid as an instance of the straight channel. In the unidirectional approach (d) we process each segment in a counterclockwise manner, starting at the
+        blue segment. For hybrid and binary (e), we evaluate the blue segment, then the cyan segments, and finally the red segment. The learned policy proceeds
+        directly from the initial state to actuation (f). The Final State box shows the final assembled gasket.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            In <span class="dgask">Gasket Assembly</span>, a deformable gasket must be
+            aligned and pressed into a narrow channel. This task is common
+            for sealing surfaces in the manufacturing of automobiles,
+            appliances, electronics, and other products. <span class="dgask">Gasket Assembly</span> is
+            a long-horizon, high-precision task and the gasket must align
+            with the channel and be fully pressed in to achieve a secure
+            fit. We present and compare 4 methods for <span class="dgask">Gasket Assembly</span>:
+            one policy from deep imitation learning and three procedural
+            algorithms. We evaluate each using 3D printed channels with
+            100 physical trials. Results suggest that deep imitation learning
+            can fail (lowest quartile of alignment and insertion performance) 
+            on a straight channel in 2 of 10 trials, whereas a hybrid
+            procedural algorithm achieves highest quartile performance in
+            all 10 trials. The procedural algorithm also performs reliably
+            on a curved channel but poorly on a closed trapezoidal channel.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+
+<section class="publication-body">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+    <div class="publication-body"> 
+      <h3 class="title is-4">Channel Types</h3>
+      <p>
+        We present three channel types: open straight, open curved and closed trapezoid. See the link at page top for CAD files. 
+      
+      </p>
+      <img id="publication" autoplay muted loop playsinline height="100%">
+        <img src="./static/images/channels_bigger2.png"
+                type="images/png">
+      </img>
+      <p>
+        Each channel is shown here with a gasket fully inserted. The straight channel (A) and the curved channel (B) are both open-ended channels whereas 
+        the trapezoid channel (C) is closed. This means that for all channels, the gasket endpoints (g0, g1) and channel endpoints (c0, c1) 
+        lie nearly on top of each other, but in the trapezoid case, c0 and c1 also lie nearly on top of each other
+      </p>
+    </div>
+    </div>
+  </div>
+</section>
+
+<br>
+<br>
+<br>
+
+<section class="publication-body">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+    <div class="publication-body"> 
+      <h2 class="title is-3">Physical Trials & Results</h2>
+      <p>
+        We carry out 100 physical trials: 10 for the learned diffusion policy on the straight channel, 
+        10 for each procedural algorithm on each channel: straight, curved and trapezoid.
+      </p>
+      <img id="publication" autoplay muted loop playsinline height="100%">
+        <img src="./static/images/alignment_results.png"
+                type="images/png">
+    </img>
+    <p><span class = "bold">Alignment Results for all four approaches: learned diffusion mode, unidirectional, binary search and hybrid. 
+    </span></p>
+    </div>
     </div>
   </div>
 </section>
 
 
-<section class="hero is-light is-small">
+<section class="publication-body">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+    <div class="publication-body"> 
+      <img id="publication" autoplay muted loop playsinline height="100%">
+        <img src="./static/images/insertion_results.png"
+                type="images/png">
+    </img>
+    <p> <b>
+      Insertion Results for all four approaches: learned diffusion mode, unidirectional, binary search and hybrid. 
+    </b></p>
+    </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- <section class="hero is-light is-small">
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
@@ -244,40 +349,11 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            In <span class="dnerf">Gasket Assembly</span>, a deformable gasket must be
-            aligned and pressed into a narrow channel. This task is common
-            for sealing surfaces in the manufacturing of automobiles,
-            appliances, electronics, and other products. <span class="dnerf">Gasket Assembly</span> is
-            a long-horizon, high-precision task and the gasket must align
-            with the channel and be fully pressed in to achieve a secure
-            fit. We present and compare 4 methods for <span class="dnerf">Gasket Assembly</span>:
-            one policy from deep imitation learning and three procedural
-            algorithms. We evaluate each using 3D printed channels with
-            100 physical trials. Results suggest that deep imitation learning
-            can fail (lowest quartile of alignment and insertion performance) 
-            on a straight channel in 2 of 10 trials, whereas a hybrid
-            procedural algorithm achieves highest quartile performance in
-            all 10 trials. The procedural algorithm also performs reliably
-            on a curved channel but poorly on a closed trapezoidal channel.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Abstract. -->
 
     <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
+    <!-- <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
@@ -285,18 +361,18 @@
                   frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
       </div>
-    </div>
+    </div> -->
     <!--/ Paper video. -->
-  </div>
-</section>
+  <!-- </div>
+</section> -->
 
 
-<section class="section">
+<!-- <section class="section">
   <div class="container is-max-desktop">
 
     <div class="columns is-centered">
 
-      <!-- Visual Effects. -->
+      Visual Effects.
       <div class="column">
         <div class="content">
           <h2 class="title is-3">Visual Effects</h2>
@@ -309,11 +385,11 @@
                     type="video/mp4">
           </video>
         </div>
-      </div>
+      </div> -->
       <!--/ Visual Effects. -->
 
       <!-- Matting. -->
-      <div class="column">
+      <!-- <div class="column">
         <h2 class="title is-3">Matting</h2>
         <div class="columns is-centered">
           <div class="column content">
@@ -329,15 +405,15 @@
 
         </div>
       </div>
-    </div>
+    </div> -->
     <!--/ Matting. -->
 
     <!-- Animation. -->
-    <div class="columns is-centered">
+    <!-- <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Animation</h2>
 
-        <!-- Interpolating. -->
+        Interpolating.
         <h3 class="title is-4">Interpolating states</h3>
         <div class="content has-text-justified">
           <p>
@@ -368,14 +444,14 @@
             <p class="is-bold">End Frame</p>
           </div>
         </div>
-        <br/>
+        <br/> -->
         <!--/ Interpolating. -->
 
-        <!-- Re-rendering. -->
+        <!-- Re-rendering.
         <h3 class="title is-4">Re-rendering the input video</h3>
         <div class="content has-text-justified">
           <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
+            Using <span class="dgask">Nerfies</span>, you can re-render a video from a novel
             viewpoint such as a stabilized camera by playing back the training deformations.
           </p>
         </div>
@@ -390,17 +466,17 @@
                     type="video/mp4">
           </video>
         </div>
-        <!--/ Re-rendering. -->
+        / Re-rendering.
 
       </div>
     </div>
-    <!--/ Animation. -->
+    / Animation.
 
   </div>
-</section>
+</section> -->
 
 
-<section class="section" id="BibTeX">
+<!-- <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>@article{park2021nerfies,
@@ -410,7 +486,7 @@
   year      = {2021},
 }</code></pre>
   </div>
-</section>
+</section> -->
 
 
 <footer class="footer">
