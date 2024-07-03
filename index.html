@@ -180,20 +180,25 @@
   <div class="container is-max-desktop">
     <div class="publication-body">
       <img id="publication" autoplay muted loop playsinline height="100%">
-        <img src="./static/images/actuation.png"
+        <img src="./static/images/actuation_wide.png"
                 type="images/png">
     </img>
-      <p>
-        For the <span class="dgask">Gasket Assembly</span>, task, we present a learned diffusion policy and three procedural algorithms. 
-        The procedural algorithms consist of gasket/channel detection, template matching and then actuation. The Gasket/Channel Detection box shows
-        gasket segmentation (above) and channel segmentation (below). The Template Matching box shows the three templates for the curved, straight and trapezoid
-        channels. The Straight/Curved Actuation box shows selection and actuation strategies for the straight and curved channels: (a) is Unidirectional insertion,
-        (b) is Binary search insertion, and (c) is Hybrid insertion. The numbers of the points on the channels represent the order and location where robot attempts
-        to place and press the gasket into. The arrows indicate the direction(s) of the slide(s). The half-points and quartile-points in binary insertion are labeled as
-        (2,3) and (4,6,7,5) respectively. In Hybrid insertion they’re labeled (4,5) and (6,8,9,5) respectively. For the trapezoid channel, we treat each segment of the
-        trapezoid as an instance of the straight channel. In the unidirectional approach (d) we process each segment in a counterclockwise manner, starting at the
-        blue segment. For hybrid and binary (e), we evaluate the blue segment, then the cyan segments, and finally the red segment. The learned policy proceeds
-        directly from the initial state to actuation (f). The Final State box shows the final assembled gasket.
+      <p> 
+        The Gasket/Channel Detection box shows gasket segmentation (above) and channel segmentation (below). 
+        The Template Matching box shows the three templates for the curved, straight and trapezoid channel.
+        The Straight/Curved Actuation box shows selection and actuation strategies for the straight and curved 
+        channels: (a) is Unidirectional insertion, (b) is Binary search insertion, and (c) is Binary+ insertion. 
+        The colors on the channels represent the locations the robot attempts to place and press
+        the gasket into while the numbers represent the order they are placed and
+        pressed. Endpoints are green, midpoints are pink, half-points are blue and
+        the quartile-points are cyan. The arrows indicate the direction(s) of the
+        slide(s). For the trapezoid channel, we treat each segment of the trapezoid
+        as an instance of the straight channel. In the unidirectional approach (d)
+        we process each segment in a counterclockwise manner, starting at the blue
+        segment. For hybrid and binary (e), we evaluate the blue segment, then the 
+        cyan segments, and finally the red segment. The learned policy proceeds 
+        directly from the initial state to actuation (f). The Final State box shows the
+        final assembled gasket.
       </p>
     </div>
   </div>
@@ -207,21 +212,20 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            In <span class="dgask">Gasket Assembly</span>, a deformable gasket must be
-            aligned and pressed into a narrow channel. This task is common
-            for sealing surfaces in the manufacturing of automobiles,
-            appliances, electronics, and other products. <span class="dgask">Gasket Assembly</span> is
-            a long-horizon, high-precision task and the gasket must align
-            with the channel and be fully pressed in to achieve a secure
-            fit. We present and compare 4 methods for <span class="dgask">Gasket Assembly</span>:
-            one policy from deep imitation learning and three procedural
-            algorithms. We evaluate each using 3D printed channels with
-            100 physical trials. Results suggest that deep imitation learning
-            can fail (lowest quartile of alignment and insertion performance) 
-            on a straight channel in 2 of 10 trials, whereas a hybrid
-            procedural algorithm achieves highest quartile performance in
-            all 10 trials. The procedural algorithm also performs reliably
-            on a curved channel but poorly on a closed trapezoidal channel.
+            In <span class="dgask">Gasket Assembly</span>, a deformable gasket must be aligned 
+            and pressed into a narrow channel. This task is
+            common for sealing surfaces in the manufacturing of automobiles, 
+            appliances, electronics, and other products.  <span class="dgask">Gasket
+            Assembly</span> is a long-horizon, high-precision task and the gasket
+            must align with the channel and be fully pressed in to
+            achieve a secure fit. To compare approaches, we present 4
+            methods for <span class="dgask">Gasket Assembly</span>: 
+            one policy from deep imitation learning and three procedural algorithms. 
+            We evaluate these methods with 100 physical trials. Results suggest that the
+            Binary+ algorithm succeeds in 10/10 on the straight channel
+            whereas the learned policy based on 250 human teleoperated
+            demonstrations succeeds in 8/10 trials and is significantly
+            slower.
           </p>
         </div>
       </div>
@@ -280,10 +284,10 @@
         10 for each procedural algorithm on each channel: straight, curved and trapezoid.
       </p>
       <img id="publication" autoplay muted loop playsinline height="100%">
-        <img src="./static/images/alignment_results.png"
+        <img src="./static/images/alignment_and_insertion.png"
                 type="images/png">
     </img>
-    <p><span class = "bold">Alignment Results for all four approaches: learned diffusion mode, unidirectional, binary search and hybrid. 
+    <p><span class = "bold">Alignment Results and Insertion Results for all four approaches: learned diffusion mode, unidirectional, binary search and Binary+. 
     </span></p>
     </div>
     </div>
@@ -291,7 +295,7 @@
 </section>
 
 
-<section class="publication-body">
+<!-- <section class="publication-body">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
     <div class="publication-body"> 
@@ -305,7 +309,7 @@
     </div>
     </div>
   </div>
-</section>
+</section> -->
 
 
 <section class="section">
