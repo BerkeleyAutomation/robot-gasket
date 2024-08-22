@@ -98,7 +98,7 @@
                Shreya Ganti</a><sup>1</sup>,
             </span>
             <span class="author-block">
-               Charlotte Le</a><sup>1</sup>,
+              <a href="https://www.charlotte-le.com/">Charlotte Le</a><sup>1</sup>,
             </span>
             <span class="author-block">
                Jaimyn Drake</a><sup>1</sup>,
@@ -121,12 +121,12 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://drive.google.com/file/d/1Pq9CUWn6sLcQ1JihqVsMx0T77W6v-z5k/view?usp=sharing"
+                <a href="https://drive.google.com/file/d/1oMGu8Q9P5zRTIv6VNtTlOWw9fOVRx_01/view"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                   </span>
-                  <span>Paper(Under Review)</span>
+                  <span>Paper</span>
                 </a>
               </span>
               <!-- <span class="link-block">
@@ -150,12 +150,12 @@
               </span> -->
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/SimeonOA/robot_gasket_assembly"
+                <a href="https://github.com/BerkeleyAutomation/gasket-assembly"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
-                  <span>Code(Beta)</span>
+                  <span>Code</span>
                   </a>
               </span>
               <!-- Data Files Link. -->
@@ -261,7 +261,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
     <div class="publication-body"> 
-      <h3 class="title is-4">Channel Types</h3>
+      <h2 class="title is-3">Channel Types</h2>
       <p>
         We present three channel types: open straight, open curved and closed trapezoid. See the link at page top for CAD files. 
       
@@ -303,6 +303,7 @@
     </div>
   </div>
 </section>
+
 
 
 <!-- <section class="publication-body">
@@ -418,6 +419,73 @@
 
   </div>
 </section>
+
+
+<section class="publication-body">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+    <div class="publication-body"> 
+      <h2 class="title is-3 has-text-centered is-bold">Appendix</h2>
+
+      <ol type="A">
+        <li>
+          <!-- <h3 id="human-demonstrations">Human Demonstrations</h3> -->
+          <strong>Human Demonstrations</strong>
+          <p>Human demonstrations are collected as follows:</p>
+          <ol>
+              <li>The channel is fixed in place horizontally across the workspace, separating the workspace into a lower and upper section.</li>
+              <li>The gasket is randomly dropped in either the lower or upper section so that it does not overlap itself and does not touch the channel.</li>
+              <li>The midpoint of the gasket is grasped and placed on top of the midpoint of the channel. The gripper then presses the gasket down into the channel.</li>
+              <li>One endpoint of the channel is chosen arbitrarily. The gasket is placed on top of the selected endpoint of the channel and pressed down into the channel.</li>
+              <li>The remaining endpoint of the gasket is then placed on top of the other endpoint of the channel and pressed to insert it into the channel.</li>
+              <li>The gripper is moved to the quartile points (the order of the quartile points the gripper goes to is chosen arbitrarily) and pressed down on the gasket such that at those points the gasket is inserted into the channel.</li>
+              <li>The gripper goes to the 'eighth' points (again the order of the points the gripper goes to is chosen arbitrarily) and presses down on the gasket such that at those points the gasket is inserted into the channel.</li>
+              <li>The gripper goes to the midpoint of the gasket, moves down slowly to the channel surface such that the gripper touches the channel surface, and moves horizontally with no vertical movement towards one of the endpoints of the channel (chosen arbitrarily). The gripper returns to the midpoint of the channel and repeats this motion towards the other endpoint of the channel. This 8-step procedure is repeated for each human demonstration.</li>
+          </ol>
+        </li>
+        <br>
+        <li>
+          <!-- <h3 id="experimental-evaluation-metrics-breakdown">Experimental Evaluation Metrics Breakdown</h3> -->
+          <strong>Experimental Evaluation Metrics Breakdown</strong>
+          <p>After the robot execution has terminated, a human judge visually rates performance into one of four alignments categories, as follows:</p>
+          <ol>
+              <li><strong>0% - 25%:</strong> A <strong>major alignment failure</strong>, in which the robot has successfully aligned <strong>less than 25%</strong> of the gasket with the channel.</li>
+              <li><strong>25% - 50%:</strong> A <strong>partial alignment failure</strong>, in which <strong>between 25% and 50%</strong> of the gasket has been successfully aligned.</li>
+              <li><strong>50% - 75%:</strong> A <strong>partial alignment success</strong>, in which <strong>between 50% and 75%</strong> of the gasket has been properly aligned.</li>
+              <li><strong>75% - 100%:</strong> A <strong>full alignment success</strong>, in which the robot has properly aligned <strong>at least 75%</strong> of the gasket length with the channel.</li>
+          </ol>
+          <br>
+          <p>Similarly, a human judge visually rates performance into one of four insertion categories, as follows:</p>
+          <ol>
+              <li><strong>0% - 25%:</strong> A <strong>major insertion failure</strong>, in which <strong>less than 25%</strong> of the gasket is inserted into the channel.</li>
+              <li><strong>25% - 50%:</strong> A <strong>partial insertion failure</strong>, in which <strong>between 25% and 50%</strong> of the gasket is inserted.</li>
+              <li><strong>50% - 75%:</strong> A <strong>partial insertion success</strong>, in which <strong>between 50% and 75%</strong> of the gasket is inserted.</li>
+              <li><strong>75% - 100%:</strong> A <strong>full insertion success</strong>, in which <strong>at least 75%</strong> of the gasket length is inserted.</li>
+          </ol>
+      </li>
+      <p>&nbsp;</p>
+      <p>Figure 4 shows qualitative results from the trials of the three analytical algorithms in increasing order of success.</p>
+      <br>
+
+      <p><img src="./static/images/eval_updated.001.png" alt="Evaluation Metrics"></p>
+      <p>Fig. 4: <b>Evaluation Metric Examples.</b> We provide examples for all four
+        categories of the alignment and insertion evaluation metrics discussed in
+        Section V-D. We show the final gasket and channel states after the robot
+        attempts gasket assembly. For alignment we only consider the view from the
+        overhead camera to determine alignment between the gasket and channel.
+        To determine the snug fit of the insertion, we consult both the overhead
+        view (top row) and the front view (bottom row), because (f), for example,
+        shows how a gasket that is aligned with the channel can have poor insertion.</p>
+
+     
+
+    </div>
+  </div>
+</div>
+</section>
+
+
+
 
 <!-- <section class="hero is-light is-small">
   <div class="hero-body">
@@ -601,17 +669,20 @@
 </section> -->
 
 
-<!-- <section class="section" id="BibTeX">
+<section class="section" id="Citation">
   <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+  <h2 class="title">Citation</h2>
+  If you use this work or our dataset or find it helpful, please consider citing: (bibtex)
+  <pre><code>
+  @inproceedings{gasketassembly2024,
+    author    = {Adebola, Simeon* and Sadjadpour, Tara* and El-Refai, Karim* and Panitch, Will and Ma, Zehan 
+                and Lin, Roy and Qiu, Tianshuang and Ganti, Shreya and Le, Charlotte and Drake, Jaimyn and Goldberg, Ken},
+    title     = {Automating Deformable Gasket Assembly},
+    journal   = {CASE},
+    year      = {2024},
 }</code></pre>
-  </div>
-</section> -->
+</div>
+</section>
 
 
 <footer class="footer">
